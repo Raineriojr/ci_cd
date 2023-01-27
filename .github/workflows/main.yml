@@ -22,6 +22,13 @@ jobs:
 
       - name: Build
         run: npm run build
+        
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        #if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.TESTE_CI }}
+          publish_dir: ./dist
 
       # - name: Deploy to GitHub Pages
       #   uses: JamesIves/github-pages-deploy-action@releases/v3
