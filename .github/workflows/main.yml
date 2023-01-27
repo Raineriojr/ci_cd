@@ -23,10 +23,10 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.TESTE_CI }}
-        with:
-          BRANCH: master
-          FOLDER: dist/
+      # - name: Deploy to GitHub Pages
+      #   uses: JamesIves/github-pages-deploy-action@releases/v3
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.TESTE_CI }}
+      #   with:
+      #     BRANCH: master
+      #     FOLDER: dist/
