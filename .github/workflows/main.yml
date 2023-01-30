@@ -24,7 +24,7 @@ jobs:
 
       - name: Check environment variable
         run:
-          if ${{ secrets.DEPLOY_PLATFORM == 'github' }}
+          if [ "$DEPLOY_PLATFORM" = "github" ]
             echo "PLATAFORMA git" 
           else
             echo "PLATAFORMA outra"
