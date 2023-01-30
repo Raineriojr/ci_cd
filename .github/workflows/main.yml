@@ -16,19 +16,31 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16.x'
-      
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
       - name: Install dependencies
         run: npm ci --if-present
 
       - name: Build
         run: npm run build
-        
-      - name: Deploy
+
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         #if: ${{ github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.TESTE_CI }}
           publish_dir: ./dist
+
+      - name: Deploy to Netlify
+        uses: South-Paw/action-netlify-deploy@v1.2.0
+        with: 
+          github_token: ${{ secrets.TESTE_CI }}
+          netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
+          build-dir: './dist'
+
+
 
       # - name: Deploy to GitHub Pages
       #   uses: JamesIves/github-pages-deploy-action@releases/v3
