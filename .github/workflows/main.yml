@@ -23,8 +23,8 @@ jobs:
         run: npm ci --if-present
 
       - name: Check environment variable
-        if: ${{ secrets.DEPLOY_PLATFORM }} == 'github'
-        run: echo "gitHub Platform"
+        if: ${{ env.DEPLOY_PLATFORM == 'github' }}
+        run: echo "plataforma é github
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
