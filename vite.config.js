@@ -7,5 +7,5 @@ export default defineConfig({
   build: {
     minify: true
   },
-  //base:"/ci_cd/"
+  base:"/ci_cd/"
 })
