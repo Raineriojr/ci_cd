@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master
+env:
+  PUBLISH_DIR: /ci_cd/
 
 jobs:
   Build-and-Deploy:
@@ -35,6 +37,7 @@ jobs:
       - name: Deploy to Netlify
         uses: South-Paw/action-netlify-deploy@v1.2.0
         with: 
+          args: deploy --dir=${env.PUBLISH_DIR}
           github-token: ${{ secrets.TESTE_CI }}
           netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
