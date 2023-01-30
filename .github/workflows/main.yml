@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  Build-and-Deploy:
+  Build-App:
     name: Build and deploy app
     runs-on: ubuntu-latest
     steps:
@@ -26,9 +26,7 @@ jobs:
         run: npm run build
 
       - name: Check Deploy platform
-        uses: actions/bin/sh@v2
-        with:
-          echo: ${{ secrets.DEPLOY_PLATFORM }}
+        run: echo "PLATAFORMA:" ${{ secrets.DEPLOY_PLATFORM }}
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
