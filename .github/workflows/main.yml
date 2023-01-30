@@ -25,6 +25,11 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Check Deploy platform
+        uses: actions/bin/sh@v2
+        with:
+          echo: ${{ secrets.DEPLOY_PLATFORM }}
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         #if: ${{ github.ref == 'refs/heads/main' }}
