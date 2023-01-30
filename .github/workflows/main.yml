@@ -30,7 +30,7 @@ jobs:
         #if: ${{ github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.TESTE_CI }}
-          publish_dir: ./dist
+          publish_dir: ./ci_cd/dist
 
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2.0.0
