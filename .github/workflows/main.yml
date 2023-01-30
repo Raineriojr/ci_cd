@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  Build-App:
+  Build-and-Deploy:
     name: Build and deploy app
     runs-on: ubuntu-latest
     steps:
@@ -22,9 +22,8 @@ jobs:
       - name: Install dependencies
         run: npm ci --if-present
 
-      - name: Check environment variable
-        if: ${{ env.DEPLOY_PLATFORM == 'github' }}
-        run: echo "plataforma é github
+      - name: Build
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
