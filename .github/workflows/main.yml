@@ -22,11 +22,12 @@ jobs:
       - name: Install dependencies
         run: npm ci --if-present
 
-      - name: Build
-        run: npm run build
-
-      - name: Check Deploy platform
-        run: echo "PLATAFORMA:" ${{ secrets.DEPLOY_PLATFORM }}
+      - name: Check environment variable
+        run:
+          if ${{ secrets.DEPLOY_PLATFORM === 'github' }}
+            echo "PLATAFORMA git" 
+          else
+            echo "PLATAFORMA outra"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
