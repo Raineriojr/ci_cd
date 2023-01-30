@@ -7,5 +7,5 @@ export default defineConfig({
   build: {
     minify: true
   },
-  base:"/ci_cd/"
+  base: process.env.DEPLOY_PLATFORM === 'github' ? '/ci_cd/' : '/',
 })
