@@ -33,7 +33,7 @@ jobs:
           publish_dir: ./dist
 
       - name: Deploy to Netlify
-        uses: jsmrcaga/action-netlify-deploy@v1.1.0
+        uses: jsmrcaga/action-netlify-deploy@v2.0.0
         with: 
           github-token: ${{ secrets.TESTE_CI }}
           netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
