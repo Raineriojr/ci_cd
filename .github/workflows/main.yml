@@ -25,18 +25,19 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        #if: ${{ github.ref == 'refs/heads/main' }}
-        with:
-          github_token: ${{ secrets.TESTE_CI }}
-          publish_dir: dist
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v2.0.0
+        with: 
+          publish-dir: dist
+          github-token: ${{ secrets.TESTE_CI }}
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 
-      # - name: Deploy to Netlify
-      #   uses: nwtgck/actions-netlify@v2.0.0
-      #   with: 
-      #     publish-dir: dist
-      #     github-token: ${{ secrets.TESTE_CI }}
-      #   env:
-      #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-      #     NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      # - name: Deploy to GitHub Pages
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   #if: ${{ github.ref == 'refs/heads/main' }}
+      #   with:
+      #     github_token: ${{ secrets.TESTE_CI }}
+      #     publish_dir: dist
+
