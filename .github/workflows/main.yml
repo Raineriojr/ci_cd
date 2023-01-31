@@ -32,19 +32,11 @@ jobs:
           github_token: ${{ secrets.TESTE_CI }}
           publish_dir: dist
 
-      - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v2.0.0
-        with: 
-          publish-dir: dist
-          github-token: ${{ secrets.TESTE_CI }}
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-
-      # - name: Deploy to GitHub Pages
-      #   uses: JamesIves/github-pages-deploy-action@releases/v3
+      # - name: Deploy to Netlify
+      #   uses: nwtgck/actions-netlify@v2.0.0
+      #   with: 
+      #     publish-dir: dist
+      #     github-token: ${{ secrets.TESTE_CI }}
       #   env:
-      #     GITHUB_TOKEN: ${{ secrets.TESTE_CI }}
-      #   with:
-      #     BRANCH: master
-      #     FOLDER: dist/
+      #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      #     NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
