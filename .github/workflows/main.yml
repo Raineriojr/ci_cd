@@ -1,5 +1,5 @@
-name: Deploy Git Hub Pages
-#run-name: Test GitHub Actions 🚀
+name: Deploy Netlify
+run-name: Deploy Netlify 🚀
 on:
   push:
     branches:

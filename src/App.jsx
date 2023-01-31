@@ -29,7 +29,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <h2>Testando deploy de aplicação</h2>
-      <h2>Em GitHub Pages</h2>
+      <h2>em Netlify</h2>
     </div>
   )
 }
