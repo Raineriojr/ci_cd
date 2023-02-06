@@ -8,4 +8,13 @@ export default defineConfig({
     minify: true
   },
   base: '/',
+  server: {
+    hmr: {
+      host: '0.0.0.0',
+      port: 3010,
+    },
+    chokidarWatchOptions: {
+      usePolling: true
+    }
+  }
 })
