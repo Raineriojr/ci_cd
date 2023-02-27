@@ -12,7 +12,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: /ci_cd/
+        working-directory: /home/runner/work/ci_cd
 
     steps:
       - uses: actions/checkout@v3
