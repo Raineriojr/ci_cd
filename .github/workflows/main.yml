@@ -34,13 +34,13 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 
-      # - name: Change directory
-      #   run: |
-      #     rm -rf public \
-      #     npm install
-      #     ${{ BASE_URL }} = /ci_cd/ \
-      #     npm run build \
-      #     mv ./dist ./public
+      - name: Change directory
+        run: |
+          rm -rf public \
+          npm install
+          ${{ BASE_URL }} = /ci_cd/ \
+          npm run build \
+          mv ./dist ./public
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
