@@ -25,18 +25,18 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v2.0.0
-        with: 
-          publish-dir: dist
-          github-token: ${{ secrets.TESTE_CI }}
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      # - name: Deploy to Netlify
+      #   uses: nwtgck/actions-netlify@v2.0.0
+      #   with: 
+      #     publish-dir: dist
+      #     github-token: ${{ secrets.TESTE_CI }}
+      #   env:
+      #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      #     NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 
       - name: config directory
         run: |
-          cd / \
+          cd .
           ls /home/runner/work/
 
       - name: Deploy to GitHub Pages
