@@ -36,7 +36,6 @@ jobs:
 
       - name: config directory
         run: |
-          cd .
           mv ./home/runner/work/ci_cd/ci_cd ./home/runner/work/ci_cd
           ls /home/runner/work/ci_cd
           # npm run build
