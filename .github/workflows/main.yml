@@ -37,8 +37,8 @@ jobs:
       - name: config directory
         run: |
           npm install \
-          cd ../
           BASE_URL=/ci_cd/ \
+          cd ../
           ls /home/runner/work/ \
           npm run build
 
