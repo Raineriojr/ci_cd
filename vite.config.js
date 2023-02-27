@@ -7,14 +7,12 @@ export default defineConfig({
   build: {
     minify: true
   },
-  base: '/',
+  base: '/ci_cd/',
   server: {
+    host: '0.0.0.0',
+    port: 3000,
     hmr: {
-      host: '0.0.0.0',
-      port: 3010,
+      port: 3000,
     },
-    chokidarWatchOptions: {
-      usePolling: true
-    }
   }
 })
