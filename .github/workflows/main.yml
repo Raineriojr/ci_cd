@@ -36,7 +36,7 @@ jobs:
 
       - name: config directory
         run: |
-          # mv /dist ../
+          mv /dist ../
           ls /home/runner/work/ci_cd
 
       - name: Deploy to GitHub Pages
