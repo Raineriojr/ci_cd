@@ -36,11 +36,8 @@ jobs:
 
       - name: config directory
         run: |
-          npm install \
-          ls \
-          BASE_URL=/ci_cd/ \
-          npm run build \
-          mv ./dist ./ci_cd
+          ls
+
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
