@@ -39,7 +39,7 @@ jobs:
           # npm install \
           # cd ../
           # BASE_URL=/ci_cd/ \
-          ls /home/runner/work/ci_cd
+          ls /home/runner/work/ci_cd/ci_cd
           # npm run build
 
       - name: Deploy to GitHub Pages
