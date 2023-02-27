@@ -37,8 +37,7 @@ jobs:
       - name: Change directory
         run: |
           rm -rf public \
-          npm install
-          ${{ BASE_URL }} = /ci_cd/ \
+          npm install \
           npm run build \
           mv ./dist ./public
 
