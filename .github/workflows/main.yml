@@ -9,6 +9,11 @@ jobs:
   Build-and-Deploy:
     name: Build and deploy app
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: /ci_cd/
+
     steps:
       - uses: actions/checkout@v3
 
@@ -33,11 +38,6 @@ jobs:
       #   env:
       #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
       #     NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-
-      - name: config directory
-        run: |
-          ls /home/runner/work/ci_cd
-          cp /home/runner/work/ci_cd/ci_cd/dist /home/runner/work/ci_cd
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
