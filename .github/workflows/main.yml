@@ -36,9 +36,9 @@ jobs:
 
       - name: config directory
         run: |
-          ls ./home/runner/work/ci_cd
-          mv ./home/runner/work/ci_cd/ci_cd/dist ./home/runner/work/ci_cd
-          
+          ls /home/runner/work/ci_cd
+          mv /home/runner/work/ci_cd/ci_cd/dist /home/runner/work/ci_cd
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         #if: ${{ github.ref == 'refs/heads/main' }}
