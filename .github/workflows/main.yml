@@ -37,7 +37,8 @@ jobs:
       - name: config directory
         run: |
           npm install \
-          # BASE_URL=../ci_cd/ \
+          BASE_URL=/ci_cd/ \
+          ls \
           npm run build
 
       - name: Deploy to GitHub Pages
