@@ -29,7 +29,7 @@ jobs:
         uses: nwtgck/actions-netlify@v2.0.0
         with: 
           publish-dir: dist
-          github-token: ${{ secrets.TESTE_CI }}
+          github-token: ${{ secrets.CI_TEST }}
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
@@ -46,6 +46,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         #if: ${{ github.ref == 'refs/heads/main' }}
         with:
-          github_token: ${{ secrets.TESTE_CI }}
+          github_token: ${{ secrets.CI_TEST }}
           publish_dir: dist
 
