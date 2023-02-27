@@ -38,6 +38,7 @@ jobs:
         run: |
           rm -rf public \
           npm install \
+          BASE_URL=/ci_cd/ \
           npm run build \
           mv ./dist ./public
 
