@@ -9,6 +9,6 @@ RUN npm install --only=dev
 
 COPY ./ /app/
 
-EXPOSE 3010
+EXPOSE 3000
 
 CMD ["npm", "run", "dev"]

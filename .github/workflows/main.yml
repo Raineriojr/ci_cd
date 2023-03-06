@@ -9,11 +9,7 @@ jobs:
   Build-and-Deploy:
     name: Build and deploy app
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: /home/runner/work/ci_cd/ci_cd
-
+    
     steps:
       - uses: actions/checkout@v3
 
